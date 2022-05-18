@@ -1,0 +1,269 @@
+
+
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+.container-fluid{
+    padding: 0 0 0 0;
+}
+
+
+/* NAV BAR */
+
+
+#Navigation .container-fluid{
+    padding: 3% 15% 7%;
+}
+.navbar-heading{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: left;
+    color: black;
+    line-height: 3rem;
+}
+#Navigtaion {
+    /* padding-left: 5%;
+    padding-top: 0.5%; */
+    padding: 3% 12%;
+    text-align: center;
+    background-color: rgb(111, 177, 218);
+    height: 650px;
+}
+.nav-item{
+    margin: 0 37px 0 5px;
+    font-size: 1.25rem;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+.navbar-dark .navbar-nav .nav-link:active{
+    color: rgb(71, 71, 71);
+}
+
+ /* navigation section  */
+
+ .big-heading{
+    font-family: "Montserrat-Black",sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    padding-top: 8rem;
+    font-weight: bolder;
+    text-align: left;
+    color: white;
+}
+
+.big-heading {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: whitesmoke;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* Books image in carousal section */
+#books-collection{
+    margin-top: 60px;
+    background-color: rgb(68, 130, 169);
+    text-align: center;
+
+
+}
+
+.books-image{
+    height: 700px;
+    width: 1200px;
+}
+.carousel-item {
+
+    transition: transform .7s ease-in-out;
+}
+
+/* title-image */
+.title-img {
+
+
+    width: 30%;
+    position: absolute;
+
+    border-radius: 20px;
+    right: 202px;
+    margin-top: 50px;
+    transform: rotate(23deg);
+    /* margin-left: 30.5%; */
+
+}
+
+
+/* login section */
+#Login-section {
+
+    padding: 100px 232px;
+    /* background-color: rgb(255 255 255); */
+    background-color: rgb(244 245 245);
+    font-family: "Montserrat-Black",sans-serif;
+    /* height: 600px; */
+    position: relative;
+    z-index: 1;
+}
+.col-md-3{
+    height: 350px;
+    width: 300px;
+    /* border: 2px so; */
+    border-radius: 13px;
+    box-shadow: 5px 5px 5px -2px;
+    background-color: rgb(124 183 210);
+    margin: 28px;
+     position: relative;
+
+}
+
+.login-user{
+    position: absolute;
+    top: 85%;
+    left: 42%;
+
+    background-color: black;
+    border: none;
+    color: rgb(255 255 255);
+    padding: 7px 36px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Montserrat-Black",sans-serif;
+    font-size: 22px;
+    margin: -15px -38px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.login-admin{
+    position: absolute;
+    top: 85%;
+    left: 39%;
+    background-color: black;
+    border: none;
+    color: rgb(255 255 255);
+    padding: 7px 36px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Montserrat-Black",sans-serif;
+    font-size: 22px;
+    margin: -15px -30px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.signUp-user{
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    background-color: black;
+    border: none;
+    color: rgb(255 255 255);
+    padding: 7px 36px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Montserrat-Black",sans-serif;
+    font-size: 22px;
+    margin: -15px -38px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.signUp-admin{
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    background-color: black;
+    border: none;
+    color: rgb(255 255 255);
+    padding: 7px 36px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Montserrat-Black",sans-serif;
+    font-size: 22px;
+    margin: -15px -38px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.signUp-user:hover{
+    background-color: rgb(68, 143, 201);
+    transition: .2s transform ease-in-out;
+    color: white;
+}
+.signUp-admin:hover{
+    background-color: rgb(68, 143, 201);
+    transition: .2s transform ease-in-out;
+    color: white;
+}
+.login-user:hover{
+    background-color: rgb(68, 143, 201);
+    transition: .2s transform ease-in-out;
+    color: white;
+}
+.login-admin:hover{
+    background-color: rgb(68, 143, 201);
+    transition: .2s transform ease-in-out;
+    color: white;
+}
+
+.user-login-image{
+    margin: 5% 40%;
+}
+.user-signup-image{
+    margin: 5% 40%;
+}
+.admin-login-image{
+    margin: 5% 35%;
+}
+
+.card-section{
+    text-align: center;
+    margin-top: 5px;
+}
+.p1-login-user {
+    text-align: justify;
+    margin: 0px 9px 0px 9px;
+    font-size: 16px;
+    padding: 32px;
+    word-spacing: -1px;
+}
+.p2-login-user {
+    text-align: justify;
+    margin: 0px 9px 0px 9px;
+    font-size: 16px;
+    padding: 32px;
+    word-spacing: -2px;
+}
+.p3-signup-user {
+    text-align: justify;
+    margin: 0px 9px 0px 9px;
+    font-size: 16px;
+    padding: 32px;
+    word-spacing: -1px;
+}
+
+/* responsiveness media queries */
+
+@media (max-width:1412px) {
+
+    .title-img{
+        position: absolute;
+        transform: rotate(0);
+        width: 27%;
+        right: 168px;
+
+    }
+
+
+}

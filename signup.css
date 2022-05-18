@@ -1,0 +1,52 @@
+
+*{
+    padding: 0;
+    margin: 0;
+
+
+
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* navigation */
+#Navigation{
+    background-color:whitesmoke;
+}
+
+#Navigation .container-fluid {
+    padding: 1% 6% 2%;
+}
+.navbar-heading{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: left;
+    color: black;
+    line-height: 3rem;
+}
+#Navigtaion {
+    /* padding-left: 5%;
+    padding-top: 0.5%; */
+    padding: 3% 12%;
+    text-align: center;
+    /* background-color: rgb(242 218 222); */
+    height: 650px;
+}
+.nav-item{
+    margin: 0 37px 0 5px;
+    font-size: 1.25rem;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+.navbar-dark .navbar-nav .nav-link:active{
+    color: rgb(71, 71, 71);
+}
+/* h1 */
+h1{
+    margin-top: 20px;
+}
