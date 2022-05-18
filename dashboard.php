@@ -1,8 +1,8 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
-// if(strlen($_SESSION['login'])==0)
+include('pdo.php');
+// if(strlen($_SESSION['alogin'])==0)
 //   {
 // header('location:index.php');
 // }
@@ -14,13 +14,16 @@ include('includes/config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | User Dash Board</title>
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Online Library Management System | Admin Dash Board</title>
     <!-- BOOTSTRAP CORE STYLE  -->
-    <link href="assets/css/bootstrap1.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap1.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -33,17 +36,15 @@ include('includes/config.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">User DASHBOARD</h4>
+                <h4 class="header-line">ADMIN DASHBOARD</h4>
 
                             </div>
 
         </div>
 
              <div class="row">
-
-
-<a href="listed-books.php">
-<div class="col-md-4 col-sm-4 col-xs-6">
+<a href="manage-books.php">
+ <div class="col-md-3 col-sm-3 col-xs-6">
  <div class="alert alert-success back-widget-set text-center">
  <i class="fa fa-book fa-5x"></i>
 <?php
@@ -57,16 +58,15 @@ $listdbooks=$query->rowCount();
 Books Listed
 </div></div></a>
 
-               <div class="col-md-4 col-sm-4 col-xs-6">
+
+
+             <a href="manage-issued-books.php">
+               <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-warning back-widget-set text-center">
                             <i class="fa fa-recycle fa-5x"></i>
 <?php
-$rsts=0;
- $sid=$_SESSION['stdid'];
-$sql2 ="SELECT id from tblissuedbookdetails where StudentID=:sid and (RetrunStatus=:rsts || RetrunStatus is null || RetrunStatus='')";
+$sql2 ="SELECT id from tblissuedbookdetails where (RetrunStatus='' || RetrunStatus is null)";
 $query2 = $dbh -> prepare($sql2);
-$query2->bindParam(':sid',$sid,PDO::PARAM_STR);
-$query2->bindParam(':rsts',$rsts,PDO::PARAM_STR);
 $query2->execute();
 $results2=$query2->fetchAll(PDO::FETCH_OBJ);
 $returnedbooks=$query2->rowCount();
@@ -76,20 +76,68 @@ $returnedbooks=$query2->rowCount();
                           Books Not Returned Yet
                         </div>
                     </div>
+                </a>
 
-<a href="issued-books.php">
-<div class="col-md-4 col-sm-4 col-xs-6">
- <div class="alert alert-success back-widget-set text-center">
- <i class="fa fa-book fa-5x"></i>
-      <h3>&nbsp;</h3>
-Issued Books
-</div></div></a>
+  <a href="reg-students.php">
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-danger back-widget-set text-center">
+                            <i class="fa fa-users fa-5x"></i>
+                            <?php
+$sql3 ="SELECT id from tblstudents ";
+$query3 = $dbh -> prepare($sql3);
+$query3->execute();
+$results3=$query3->fetchAll(PDO::FETCH_OBJ);
+$regstds=$query3->rowCount();
+?>
+                            <h3><?php echo htmlentities($regstds);?></h3>
+                           Registered Users
+                        </div>
+                    </div></a>
+
+
+  <a href="manage-authors.php">
+ <div class="col-md-3 col-sm-3 col-xs-6">
+                      <div class="alert alert-success back-widget-set text-center">
+                            <i class="fa fa-user fa-5x"></i>
+<?php
+$sq4 ="SELECT id from tblauthors ";
+$query4 = $dbh -> prepare($sq4);
+$query4->execute();
+$results4=$query4->fetchAll(PDO::FETCH_OBJ);
+$listdathrs=$query4->rowCount();
+?>
+<h3><?php echo htmlentities($listdathrs);?></h3>
+Authors Listed
+</div>
+</div></a>
+</div>
 
 
 
+ <div class="row">
+
+
+
+  <a href="manage-categories.php">
+<div class="col-md-3 col-sm-3 rscol-xs-6">
+<div class="alert alert-info back-widget-set text-center">
+<i class="fa fa-file-archive-o fa-5x"></i>
+<?php
+$sql5 ="SELECT id from tblcategory ";
+$query5 = $dbh -> prepare($sql5);
+$query5->execute();
+$results5=$query5->fetchAll(PDO::FETCH_OBJ);
+$listdcats=$query5->rowCount();
+?>
+
+                            <h3><?php echo htmlentities($listdcats);?> </h3>
+                           Listed Categories
+                        </div>
+                    </div></a>
 
 
         </div>
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

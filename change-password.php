@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('includes/config.php');
+include('pdo.php');
 error_reporting(0);
-// if(strlen($_SESSION['login'])==0)
+// if(strlen($_SESSION['alogin'])==0)
 //     {
 // header('location:index.php');
 // }
@@ -11,18 +11,18 @@ if(isset($_POST['change']))
   {
 $password=md5($_POST['password']);
 $newpassword=md5($_POST['newpassword']);
-$email=$_SESSION['login'];
-  $sql ="SELECT Password FROM tblstudents WHERE EmailId=:email and Password=:password";
+$username=$_SESSION['alogin'];
+  $sql ="SELECT Password FROM admin where UserName=:username and Password=:password";
 $query= $dbh -> prepare($sql);
-$query-> bindParam(':email', $email, PDO::PARAM_STR);
+$query-> bindParam(':username', $username, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
 $query-> execute();
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() > 0)
 {
-$con="update tblstudents set Password=:newpassword where EmailId=:email";
+$con="update admin set Password=:newpassword where UserName=:username";
 $chngpwd1 = $dbh->prepare($con);
-$chngpwd1-> bindParam(':email', $email, PDO::PARAM_STR);
+$chngpwd1-> bindParam(':username', $username, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
 $msg="Your Password succesfully changed";
@@ -42,11 +42,11 @@ $error="Your current password is wrong";
     <meta name="author" content="" />
     <title>Online Library Management System | </title>
     <!-- BOOTSTRAP CORE STYLE  -->
-    <link href="assets/css/bootstrap1.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap1.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <style>
@@ -110,7 +110,7 @@ Change Password
 </div>
 
 <div class="form-group">
-<label>Enter New Password</label>
+<label>Enter Password</label>
 <input class="form-control" type="password" name="newpassword" autocomplete="off" required  />
 </div>
 

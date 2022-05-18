@@ -58,7 +58,7 @@ error_reporting(0)
 
 
 			<nav class="navbar navbar-expand-lg navbar-dark">
-				<a class="navbar-brand" href="index1.php">
+				<a class="navbar-brand" href="">
 					<h2 class="navbar-heading">Online Library <br />Management System</h2>
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,13 +67,13 @@ error_reporting(0)
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="index1.php">Home</a>
+							<a class="nav-link" href="index.php">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="#pricing">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="feedback.php">Requests</a>
+							<a class="nav-link" href="feedback.php">Feedback</a>
 						</li>
 					</ul>
 				</div>
@@ -84,10 +84,10 @@ error_reporting(0)
 	<section id="form-container">
 		<div class="container">
 			<form action="" method="post">
-				<h1 class="text-capitalize text-center my-5">Put your Requests</h1>
-						<marquee scrollamount="20"><h2 style="color:red;">Request Book giving your SID and Name</h2></marquee>
+				<h1 class="text-capitalize text-center my-5">every feedback matters</h1>
+
 				<div class="mb-3">
-					<label for="exampleFormControlTextarea1" class="form-label" placeholder="Please give your feedback">Add your Requests</label>
+					<label for="exampleFormControlTextarea1" class="form-label" placeholder="Please give your feedback">Example textarea</label>
 					<!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
 					<input class="form-control" type="text" name="comment" placeholder="Write something..."><br>
 				</div>
